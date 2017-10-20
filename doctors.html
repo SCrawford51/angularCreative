@@ -16,10 +16,10 @@
     <div ng-app="myApp" ng-controller="myCtrl">
         <h1>Find doctors near you!!</h1>
         <form name='userForm' ng-submit='request(userForm)'>
-            <input placeholder='location' ng-model='userForm.location' />
-            <button type='submit'>Add New</button>
+            <input placeholder='city' ng-model='userForm.location' />
+            <button type='submit'>Search</button>
         </form>
-        <p>Today's welcome message is:</p>
+        <p>Doctors:</p>
         <h1>{{myWelcome}}</h1>
     </div>
 </body>
