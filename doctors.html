@@ -16,11 +16,15 @@
     <div ng-app="myApp" ng-controller="myCtrl">
         <h1>Find doctors near you!!</h1>
         <form name='userForm' ng-submit='request(userForm)'>
-            <input placeholder='city' ng-model='userForm.location' />
+            <input placeholder='Input a City' ng-model='userForm.location' />
             <button type='submit'>Search</button>
         </form>
         <p>Doctors:</p>
-        <h1>{{myWelcome}}</h1>
+        <ul>
+            <li ng-repeat="line in doctors">
+                {{line}}
+            </li>
+        </ul>
     </div>
 </body>
 

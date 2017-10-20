@@ -3,11 +3,11 @@ const miles = 25;
 var lat;
 var long;
 
-// location has to be in the format of ut-provo
 angular.module('myApp', [])
     .controller('myCtrl', function ($scope, $http) {
         apikey = '220dcd61170e58ade5c6016e96164b07'
         console.log('new');
+        $scope.doctors = [];
         $scope.request = function (user) {
             city = user.location
             googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=";
@@ -26,10 +26,14 @@ angular.module('myApp', [])
                     console.log(myurl);
                     $http.get(myurl)
                         .then(function (response) {
-                            $scope.myWelcome = response.data;
+                            var size = Object.keys(response.data.data).length;
+                            for(i=0;i<size;i++) {
+                                console.log(response.data.data[i].doctors.profile);
+                                $scope.doctors = response.data.data[i].doctors.profile;
+                            }
                         });
                 }
             });
-
+            user.location = '';
         };
     });
