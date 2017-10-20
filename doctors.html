@@ -22,7 +22,7 @@
             </form>
         </div>
         <div id="buffer">
-            <div ng-repeat="line in doctors" id="output">
+            <div ng-repeat="line in doctors" id="output" ng-if="line.total_doctors > 0" >
                 <div>
                     <b>{{line.doctors[0].profile.first_name}} {{line.doctors[0].profile.middle_name}} {{line.profile.last_name}}</b>
                 </div>
