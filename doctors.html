@@ -24,13 +24,16 @@
         <div id="buffer">
             <div ng-repeat="line in doctors" id="output">
                 <div>
-                    <b>{{line.profile.first_name}} {{line.profile.middle_name}} {{line.profile.last_name}}</b>
+                    <b>{{line.doctors[0].profile.first_name}} {{line.doctors[0].profile.middle_name}} {{line.profile.last_name}}</b>
                 </div>
                 <div>
-                    <img src="{{line.profile.image_url}}">
+                    <img src="{{line.doctors[0].profile.image_url}}">
                 </div>
                 <div id="bio">
-                    {{line.profile.bio}}
+                    <p>
+                      {{line.phones[0].number}}
+                    </p>
+                    {{line.doctors[0].profile.bio}}
                 </div>
             </div>
         </div>

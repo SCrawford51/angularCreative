@@ -23,8 +23,8 @@ angular.module('myApp', [])
                     myurl = 'https://api.betterdoctor.com/2016-03-01/practices?location=' + coord + '&skip=0&limit=10&user_key=' + apikey;
                     $http.get(myurl)
                         .then(function (response) {
-                            console.log(response.data.data[0].doctors);
-                            $scope.doctors = response.data.data[0].doctors;
+                            console.log(response.data.data);
+                            $scope.doctors = response.data.data;
                         });
                 }
             });
