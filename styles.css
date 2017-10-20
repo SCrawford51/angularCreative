@@ -1,0 +1,38 @@
+body {
+    background-color: snow;
+    text-align: center;
+    font-family: Trebuchet MS, Sans-Serif;
+}
+
+#bio {
+    left: 1000px;
+    right: 1000px;
+}
+
+div {
+    padding: 20px;
+}
+
+#header {
+    text-align: center;
+    color: snow;
+    background-color: lightskyblue;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#input {
+    color:black;
+}
+
+.btn {
+    color:black;
+}
+
+#buffer {
+    position: absolute;
+    top: 150px;
+    text-align: center;
+}

@@ -9,22 +9,31 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" type "text/css" href="styles.css">
-    <title>Find Doctors Near You!</title>
+    <title>Find a Doctor Near You!</title>
 </head>
 
 <body>
     <div ng-app="myApp" ng-controller="myCtrl">
-        <h1>Find doctors near you!!</h1>
-        <form name='userForm' ng-submit='request(userForm)'>
-            <input placeholder='Input a City' ng-model='userForm.location' />
-            <button type='submit'>Search</button>
-        </form>
-        <p>Doctors:</p>
-        <ul>
-            <li ng-repeat="line in doctors">
-                {{line}}
-            </li>
-        </ul>
+        <div id="header">
+            <h1>Find A Doctor Near You!!</h1>
+            <form name='userForm' ng-submit='request(userForm)' id="input">
+                <input placeholder='Input a City' ng-model='userForm.location' />
+                <button type='submit' class="btn">Search</button>
+            </form>
+        </div>
+        <div id="buffer">
+            <div ng-repeat="line in doctors" id="output">
+                <div>
+                    <b>{{line.profile.first_name}} {{line.profile.middle_name}} {{line.profile.last_name}}</b>
+                </div>
+                <div>
+                    <img src="{{line.profile.image_url}}">
+                </div>
+                <div id="bio">
+                    {{line.profile.bio}}
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
